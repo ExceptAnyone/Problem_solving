@@ -1,16 +1,11 @@
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const fs = require("fs");
+const stdin = fs.readFileSync("input.txt").toString().trim().split("\n");
 
-let input = [];
+const T = +stdin[0];
+const arr = stdin.slice(1).map((str) => str.split(" ").map(Number));
 
-readline
-  .on("line", function (line) {
-    input = line.split(" ").map((el) => parseInt(el));
-  })
-  .on("close", function () {
-    //이 안에 솔루션 코드 작성
+function solution(T, arr) {
+  console.log(T, arr);
+}
 
-    process.exit();
-  });
+solution(T, arr);
